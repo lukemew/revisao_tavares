@@ -1,19 +1,18 @@
 import java.util.Arrays;
 import java.util.Comparator;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
 
-        // 1
+        // Exercício 1
         // Retangulo retangulo1 = new Retangulo(2, 4);
         // retangulo1.exibirInformacoes();
 
         // Retangulo retangulo2 = new Retangulo(6, 4);
 
 
-        // 2
+        // Exercício 2
         Retangulo[] retangulos = new Retangulo[5];
         retangulos[0] = new Retangulo(5, 8);
         retangulos[1] = new Retangulo(3,5);
@@ -45,7 +44,7 @@ public class Main {
         menorPerimetro.exibirInformacoes();
         */
 
-        // 3
+        // Exercício 3
         Arrays.sort(retangulos, Comparator.comparingDouble(Retangulo::calcularArea));
 
         System.out.println("Retângulos ordenados por área:");
