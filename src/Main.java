@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -18,7 +21,7 @@ public class Main {
         retangulos[3] = new Retangulo(1,5);
         retangulos[4] = new Retangulo(2,7);
 
-
+        /*
         for (int i = 0; i < retangulos.length; i++) {
             retangulos[i].exibirInformacoes();
         }
@@ -40,8 +43,28 @@ public class Main {
 
         System.out.println("Retangulo de Menor Perimetro:");
         menorPerimetro.exibirInformacoes();
+        */
 
         // 3
+        Arrays.sort(retangulos, Comparator.comparingDouble(Retangulo::calcularArea));
 
+        System.out.println("Retângulos ordenados por área:");
+        for (Retangulo retangulo : retangulos) {
+            retangulo.exibirInformacoes();
+        }
+
+        Retangulo[] retangulosExpandido = new Retangulo[10];
+        System.arraycopy(retangulos, 0, retangulosExpandido, 0, retangulos.length);
+
+        retangulosExpandido[5] = new Retangulo(4, 4);
+        retangulosExpandido[6] = new Retangulo(7, 3);
+        retangulosExpandido[7] = new Retangulo(6, 2);
+        retangulosExpandido[8] = new Retangulo(5, 5);
+        retangulosExpandido[9] = new Retangulo(8, 1);
+
+        System.out.println("Retângulos após expansão do vetor:");
+        for (Retangulo retangulo : retangulosExpandido) {
+            retangulo.exibirInformacoes();
+        }
     }
 }
